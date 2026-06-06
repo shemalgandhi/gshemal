@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shemal Gandhi — Senior TAM | Database Architect | Cloud Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,700;1,300;1,500&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0d14;
+  --surface: #14141f;
+  --card: #1a1a2a;
+  --border: #2a2a3d;
+  --gold: #c9a96e;
+  --gold-dim: #8a6f42;
+  --text: #e8e4db;
+  --muted: #7a7a8e;
+  --accent2: #4a7fa5;
+  --white: #f5f0e8;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 3rem;
+  background: rgba(13,13,20,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+}
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 2rem 4rem;
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,169,110,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,169,110,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-glow {
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.hero-content { position: relative; text-align: center; max-width: 800px; }
+.hero-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  padding: 0.35rem 1rem;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.8s ease both;
+}
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(4rem, 10vw, 7.5rem);
+  font-weight: 700;
+  line-height: 0.9;
+  color: var(--white);
+  letter-spacing: -2px;
+  animation: fadeUp 0.8s 0.15s ease both;
+}
+.hero-name span { color: var(--gold); }
+.hero-roles {
+  margin-top: 1.8rem;
+  font-size: 0.88rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex; align-items: center; justify-content: center; gap: 1.2rem;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.3s ease both;
+}
+.hero-roles span { color: var(--gold-dim); font-size: 0.6rem; }
+.hero-desc {
+  margin-top: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 540px;
+  margin-left: auto; margin-right: auto;
+  animation: fadeUp 0.8s 0.45s ease both;
+}
+.hero-cta {
+  margin-top: 3rem;
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.6s ease both;
+}
+.btn-primary {
+  padding: 0.75rem 2rem;
+  background: var(--gold);
+  color: var(--bg);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+.btn-secondary {
+  padding: 0.75rem 2rem;
+  background: transparent;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── SECTION BASE ── */
+section { padding: 6rem 2rem; }
+.container { max-width: 960px; margin: 0 auto; }
+.section-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 3rem;
+}
+.divider {
+  width: 40px; height: 2px;
+  background: var(--gold);
+  margin: 1.2rem 0 2.5rem;
+}
+
+/* ── ABOUT ── */
+#about { background: var(--surface); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.about-bio { font-size: 0.97rem; line-height: 1.9; color: #b0aaaa; }
+.about-bio p { margin-bottom: 1.2rem; }
+.about-bio strong { color: var(--text); font-weight: 500; }
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+.skill-pill {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.9rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  transition: border-color 0.2s;
+}
+.skill-pill:hover { border-color: var(--gold); }
+.skills-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+.skills-label:first-child { margin-top: 0; }
+
+/* ── COVER LETTER ── */
+#cover-letter { background: var(--bg); }
+.letter-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 4rem;
+  border-left: 4px solid var(--gold);
+  max-width: 780px;
+}
+.letter-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 2.5rem; padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.letter-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--white);
+}
+.letter-subtitle {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 0.3rem;
+}
+.letter-contact { font-size: 0.78rem; color: var(--muted); line-height: 1.9; text-align: right; }
+.letter-contact a { color: var(--muted); text-decoration: none; }
+.letter-date { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.8rem; letter-spacing: 0.04em; }
+.letter-salutation {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+.letter-body p { font-size: 0.92rem; line-height: 1.9; color: #9a96a8; margin-bottom: 1.2rem; }
+.letter-body p strong { color: var(--text); font-weight: 500; }
+.letter-quote {
+  border-left: 2px solid var(--gold);
+  padding-left: 1.2rem;
+  margin: 1.8rem 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.7;
+}
+.letter-closing { margin-top: 2rem; }
+.closing-word { font-size: 0.92rem; color: var(--muted); margin-bottom: 0.3rem; }
+.closing-sig {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-top: 1.2rem;
+}
+.closing-role {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 0.3rem;
+}
+
+/* ── RESUME ── */
+#resume { background: var(--surface); }
+.resume-section { margin-bottom: 3rem; }
+.resume-section-title {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+.resume-item { margin-bottom: 2rem; display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start; }
+.resume-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--white);
+}
+.resume-company { font-size: 0.82rem; color: var(--gold); margin-top: 0.15rem; }
+.resume-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  white-space: nowrap;
+  text-align: right;
+  margin-top: 0.2rem;
+}
+.resume-bullets { margin-top: 0.8rem; grid-column: 1 / -1; }
+.resume-bullets li {
+  font-size: 0.87rem;
+  color: #8a8698;
+  line-height: 1.75;
+  margin-bottom: 0.4rem;
+  padding-left: 1.2rem;
+  position: relative;
+  list-style: none;
+}
+.resume-bullets li::before {
+  content: '—';
+  position: absolute; left: 0;
+  color: var(--gold-dim);
+  font-size: 0.75rem;
+}
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+.cert-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 1.2rem;
+  transition: border-color 0.2s;
+}
+.cert-card:hover { border-color: var(--gold); }
+.cert-name { font-size: 0.85rem; color: var(--text); font-weight: 400; }
+.cert-issuer { font-size: 0.72rem; color: var(--muted); margin-top: 0.3rem; }
+.download-bar {
+  display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap;
+}
+
+/* ── CONTACT ── */
+#contact { background: var(--bg); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 640px;
+}
+.contact-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  transition: border-color 0.2s;
+}
+.contact-item:hover { border-color: var(--gold); }
+.contact-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+.contact-value { font-size: 0.9rem; color: var(--text); }
+.contact-value a { color: var(--text); text-decoration: none; }
+.contact-value a:hover { color: var(--gold); }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 3rem;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { gap: 1.2rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .letter-card { padding: 2rem 1.5rem; }
+  .letter-header { flex-direction: column; gap: 1rem; }
+  .letter-contact { text-align: left; }
+  .contact-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Shemal Gandhi</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#cover-letter">Cover Letter</a>
+    <a href="#resume">Résumé</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Open to new opportunities &nbsp;·&nbsp; Mumbai, India</div>
+    <div class="hero-name">Shemal Gandhi</div>
+    <div class="hero-roles">
+      Senior TAM
+      <span>◆</span>
+      Solutions Architect
+      <span>◆</span>
+      Database Engineer
+    </div>
+    <p class="hero-desc">12+ years turning complex database challenges into reliable, scalable infrastructure — and helping enterprises extract measurable value from their data platforms.</p>
+    <div class="hero-cta">
+      <a href="#cover-letter" class="btn-primary">Read Cover Letter</a>
+      <a href="resume.html" class="btn-secondary">View Résumé</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">About Me</div>
+    <h2 class="section-title">Technical depth.<br>Customer empathy.</h2>
+    <div class="about-grid">
+      <div class="about-bio">
+        <p>After <strong>12 years as a Database Administrator &amp; Cloud Engineer</strong>, I have moved into a Customer Success role at <strong>EnterpriseDB</strong> as a Senior Technical Account Manager — leveraging deep expertise in PostgreSQL, Oracle, and cloud infrastructure to deliver impactful solutions for complex customer challenges.</p>
+        <p>I provide <strong>proactive technical guidance</strong> on architecture, performance optimisation, security, and best practices — leading technical reviews, health checks, and assessments to ensure optimal database performance and reliability. I support customers through migrations, upgrades, and critical implementations.</p>
+        <p>I specialise in <strong>RDBMS technologies</strong> including Oracle, PostgreSQL, MySQL, and MSSQL Server, managing their lifecycle across on-premises and public cloud environments. My expertise spans backup &amp; recovery, high availability, disaster recovery, performance tuning, database security, and DBaaS solutions including <strong>AWS RDS and Aurora</strong>.</p>
+        <p>As a <strong>Cloud Engineer</strong>, I have extensive experience across public cloud services — compute, storage, networking, security, IAM, and compliance. I have also worked extensively with NoSQL databases, data warehousing (IBM Netezza, Snowflake), and event streaming with Apache Kafka.</p>
+      </div>
+      <div>
+        <div class="skills-label">SQL Databases</div>
+        <div class="skills-grid">
+          <div class="skill-pill">Oracle 11g–19c</div>
+          <div class="skill-pill">PostgreSQL 9–14</div>
+          <div class="skill-pill">MS SQL Server</div>
+          <div class="skill-pill">MySQL 5.7–8.0</div>
+        </div>
+        <div class="skills-label">Oracle Technologies</div>
+        <div class="skills-grid">
+          <div class="skill-pill">RMAN</div>
+          <div class="skill-pill">Data Guard</div>
+          <div class="skill-pill">GoldenGate</div>
+          <div class="skill-pill">Multi-tenant</div>
+        </div>
+        <div class="skills-label">NoSQL & Warehousing</div>
+        <div class="skills-grid">
+          <div class="skill-pill">MongoDB Atlas</div>
+          <div class="skill-pill">DynamoDB</div>
+          <div class="skill-pill">Redis</div>
+          <div class="skill-pill">Elasticsearch</div>
+          <div class="skill-pill">Snowflake</div>
+          <div class="skill-pill">IBM Netezza</div>
+        </div>
+        <div class="skills-label">Cloud & DevOps</div>
+        <div class="skills-grid">
+          <div class="skill-pill">AWS / OCI</div>
+          <div class="skill-pill">Terraform / Ansible</div>
+          <div class="skill-pill">Jenkins / Git</div>
+          <div class="skill-pill">Grafana</div>
+          <div class="skill-pill">Apache Kafka</div>
+          <div class="skill-pill">Docker / K8s</div>
+        </div>
+        <div class="skills-label">Domains</div>
+        <div class="skills-grid">
+          <div class="skill-pill">ERP / Corporate IT</div>
+          <div class="skill-pill">BFSI</div>
+          <div class="skill-pill">Oil & Gas / Retail</div>
+          <div class="skill-pill">Product / SaaS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVER LETTER -->
+<section id="cover-letter">
+  <div class="container">
+    <div class="section-label">Cover Letter</div>
+    <h2 class="section-title">Why I am the right fit.</h2>
+    <div class="letter-card">
+      <div class="letter-header">
+        <div>
+          <div class="letter-name">Shemal Gandhi</div>
+          <div class="letter-subtitle">Senior TAM &nbsp;·&nbsp; Solutions Architect &nbsp;·&nbsp; DBA</div>
+        </div>
+        <div class="letter-contact">
+          Mumbai, Maharashtra, India<br>
+          <a href="mailto:shemalrgandhi@gmail.com">shemalrgandhi@gmail.com</a><br>
+          <a href="https://www.linkedin.com/in/shemal-gandhi-9a73ab60/" target="_blank">linkedin.com/in/shemal-gandhi</a>
+        </div>
+      </div>
+      <div class="letter-date">June 2026</div>
+      <div class="letter-salutation">Dear Hiring Manager,</div>
+      <div class="letter-body">
+        <p>I am writing to express my interest in a <strong>Senior Database Engineer, Solutions Architect, or Technical Account Manager</strong> role at your organization. Over the past <strong>12+ years</strong>, I have built a career entirely anchored in databases — evolving from a hands-on DBA in enterprise IT services to a product-company engineer and, most recently, into a customer-facing technical advisory role. Across every transition, databases have remained my constant and my passion.</p>
+        <p>My foundation was built during <strong>seven years in the IT services industry</strong>, first at <strong>TCS</strong> and then at <strong>Capgemini</strong>, working across large enterprise landscapes spanning <strong>ERP and HCM platforms</strong> — including <strong>Ultimatix</strong>, TCS's internal enterprise portal serving 600,000+ employees — at TCS, and the <strong>BFSI sector</strong> at Capgemini — including a major insurance provider and <strong>NSE (National Stock Exchange)</strong>, one of the highest-throughput transactional environments in the country.</p>
+        <div class="letter-quote">Across ERP, capital markets, insurance, oil &amp; gas retail, and SaaS — the technology stacks changed, the domains changed; the discipline of keeping databases reliable never did.</div>
+        <p>After services, I made a deliberate move into <strong>product engineering at GVR / Invenco</strong> — a global leader in oil &amp; gas retail technology — where I expanded beyond pure DBA work into <strong>DevOps, cloud infrastructure, and distributed SaaS product engineering</strong>. This gave me ownership of the platform, not just the database.</p>
+        <p>My current role at <strong>EnterpriseDB (EDB)</strong> was a conscious step into <strong>customer success and post-sales technical advisory</strong> — applying 12 years of database knowledge to help enterprise customers navigate complex Postgres challenges. I am now seeking my next challenge because the TAM role at EDB has since pivoted toward commercial objectives — the organisation's prerogative, but not my direction. My focus remains on technical depth, engineering craft, and environments where database specialisation is the expectation.</p>
+        <p>I would welcome the opportunity to discuss how my background aligns with your team's goals.</p>
+      </div>
+      <div class="letter-closing">
+        <div class="closing-word">Sincerely,</div>
+        <div class="closing-sig">Shemal Gandhi</div>
+        <div class="closing-role">Senior Technical Account Manager · EnterpriseDB</div>
+      </div>
+    </div>
+    <div class="download-bar">
+      <a href="cover-letter.html" target="_blank" class="btn-primary">Open Printable Version</a>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section id="resume">
+  <div class="container">
+    <div class="section-label">Résumé</div>
+    <h2 class="section-title">12+ years of<br>delivering excellence.</h2>
+
+    <div class="resume-section">
+      <div class="resume-section-title">Experience</div>
+
+      <div class="resume-item">
+        <div>
+          <div class="resume-role">Senior Technical Account Manager</div>
+          <div class="resume-company">EnterpriseDB (EDB)</div>
+        </div>
+        <div class="resume-date">Dec 2025 – Present<br>Mumbai, IN</div>
+        <ul class="resume-bullets">
+          <li>Primary technical liaison for enterprise accounts including ITD (India's Income Tax Department) and HDFC, managing critical PostgreSQL/EPAS environments.</li>
+          <li>Lead proactive technical engagements: architecture reviews, DR planning, replication topology design, and lifecycle upgrade strategy for peak filing periods (July–August).</li>
+          <li>Built SQL-based diagnostic frameworks for bloat detection, VACUUM/FREEZE monitoring, and autovacuum health in large-scale production environments.</li>
+          <li>Deployed EDB PGD-S and PGD-X HA clusters using TPA on Docker/EC2 (RHEL 8); developed customer-facing demo playbooks for WarehousePG/Greenplum-compatible MPP.</li>
+          <li>Structured weekly cadence calls, QBRs, and executive briefings; flagged EOL risks across EFM, PEM, and PgBouncer for strategic account planning.</li>
+        </ul>
+      </div>
+
+      <div class="resume-item">
+        <div>
+          <div class="resume-role">Senior Database Administrator / Cloud Engineer</div>
+          <div class="resume-company">Previous Roles (12+ years experience)</div>
+        </div>
+        <div class="resume-date">2012 – 2025<br>India</div>
+        <ul class="resume-bullets">
+          <li>Administered enterprise PostgreSQL, Oracle RAC/ASM, and NoSQL platforms across banking, government, and enterprise verticals.</li>
+          <li>Designed and implemented HA/DR architectures using Patroni, EFM, Barman, pgBackRest, and streaming replication across multi-site topologies.</li>
+          <li>Led cloud migrations and DevOps automation on AWS and Azure using Ansible, Docker, and Kubernetes.</li>
+          <li>OS-level kernel parameter tuning (vm.overcommit, THP, dirty page settings) for production EPAS and Oracle environments.</li>
+          <li>Collaborated with cross-functional teams on capacity planning, performance diagnostics (pgBadger, AWR, Lasso), and database lifecycle management.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <div class="resume-section-title">Technical Expertise</div>
+      <div class="skills-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap:0.7rem;">
+        <div class="skill-pill">PostgreSQL 10–17</div>
+        <div class="skill-pill">EDB EPAS / PGD</div>
+        <div class="skill-pill">Oracle RAC / ASM</div>
+        <div class="skill-pill">Barman / pgBackRest</div>
+        <div class="skill-pill">EFM / PEM / PgBouncer</div>
+        <div class="skill-pill">Greenplum / WarehousePG</div>
+        <div class="skill-pill">Ansible / TPA</div>
+        <div class="skill-pill">Docker / Kubernetes</div>
+        <div class="skill-pill">AWS / Azure</div>
+        <div class="skill-pill">RHEL / CentOS / Ubuntu</div>
+        <div class="skill-pill">Performance Tuning</div>
+        <div class="skill-pill">TAM / Customer Success</div>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <div class="resume-section-title">Education & Certifications</div>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-name">B.E. / B.Tech (or relevant degree)</div>
+          <div class="cert-issuer">University — Add your details</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-name">EDB Postgres Professional</div>
+          <div class="cert-issuer">EnterpriseDB — Add year</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-name">AWS / Azure Cloud Certification</div>
+          <div class="cert-issuer">Add your specific cert</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-name">Oracle DBA / OCA / OCP</div>
+          <div class="cert-issuer">Oracle — Add if applicable</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Let's build something<br>reliable together.</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a href="mailto:shemalrgandhi@gmail.com">shemalrgandhi@gmail.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Location</div>
+        <div class="contact-value">Mumbai, Maharashtra, India</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Phone</div>
+        <div class="contact-value"><a href="tel:+919096790297">+91 90967 90297</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value"><a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Current Role</div>
+        <div class="contact-value">Sr. TAM @ EnterpriseDB</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 Shemal Gandhi — All rights reserved</div>
+  <div>Mumbai, India &nbsp;·&nbsp; Open to opportunities</div>
+</footer>
+
+</body>
+</html>

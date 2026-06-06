@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code — Shemal Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root {
+  --bg: #0d0d14;
+  --surface: #14141f;
+  --card: #1a1a2a;
+  --border: #2a2a3d;
+  --gold: #c9a96e;
+  --text: #e8e4db;
+  --muted: #7a7a8e;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 2rem;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--gold);
+  padding: 3rem 3.5rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+.label {
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+.sub {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+.url-input-wrap {
+  display: flex; gap: 0;
+  margin-bottom: 2rem;
+}
+.url-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-right: none;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  outline: none;
+}
+.url-input:focus { border-color: var(--gold); }
+.gen-btn {
+  padding: 0.75rem 1.4rem;
+  background: var(--gold);
+  color: var(--bg);
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.gen-btn:hover { opacity: 0.85; }
+#qr-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+#qr-box {
+  background: #fff;
+  padding: 1.5rem;
+  display: inline-block;
+}
+.qr-caption {
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+.qr-caption strong { color: var(--text); }
+.download-btn {
+  display: inline-block;
+  padding: 0.65rem 2rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.download-btn:hover { border-color: var(--gold); color: var(--gold); }
+.hint {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 2rem;
+  line-height: 1.7;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+.hint a { color: var(--gold); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="label">Portfolio QR Code</div>
+  <h1>Shemal</h1>
+  <p class="sub">Enter your hosted site URL to generate a scannable QR code</p>
+
+  <div class="url-input-wrap">
+    <input class="url-input" type="url" id="urlInput" placeholder="https://shemalgandhi.github.io/gshemal" value="https://shemalgandhi.github.io/gshemal">
+    <button class="gen-btn" onclick="generateQR()">Generate</button>
+  </div>
+
+  <div id="qr-container">
+    <div id="qr-box"></div>
+    <div class="qr-caption">Scan to visit: <strong id="qr-url-label"></strong></div>
+    <button class="download-btn" onclick="downloadQR()">⬇ Download QR PNG</button>
+  </div>
+
+  <div class="hint">
+    <strong style="color:var(--text)">Free hosting options:</strong><br>
+    1. <a href="https://pages.github.com" target="_blank">GitHub Pages</a> — upload <code>index.html</code> → free <code>username.github.io</code><br>
+    2. <a href="https://netlify.com" target="_blank">Netlify Drop</a> — drag &amp; drop folder → instant URL in 30 seconds<br>
+    3. <a href="https://tiiny.host" target="_blank">tiiny.host</a> — upload ZIP → free URL instantly
+  </div>
+</div>
+
+<script>
+let qrInstance = null;
+
+function generateQR() {
+  const url = document.getElementById('urlInput').value.trim();
+  if (!url) { alert('Please enter a URL first.'); return; }
+
+  const box = document.getElementById('qr-box');
+  box.innerHTML = '';
+
+  qrInstance = new QRCode(box, {
+    text: url,
+    width: 220,
+    height: 220,
+    colorDark: '#0d0d14',
+    colorLight: '#ffffff',
+    correctLevel: QRCode.CorrectLevel.H
+  });
+
+  document.getElementById('qr-url-label').textContent = url;
+  document.getElementById('qr-container').style.display = 'flex';
+}
+
+function downloadQR() {
+  setTimeout(() => {
+    const canvas = document.querySelector('#qr-box canvas');
+    if (!canvas) { alert('Please generate the QR code first.'); return; }
+    const link = document.createElement('a');
+    link.download = 'shemal-portfolio-qr.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  }, 100);
+}
+
+// Auto-generate on load with placeholder
+window.onload = () => generateQR();
+</script>
+</body>
+</html>
