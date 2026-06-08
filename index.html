@@ -145,16 +145,16 @@ nav {
 .btn-secondary {
   padding: 0.75rem 2rem;
   background: transparent;
-  color: var(--text);
+  color: #f0f8ff;
   font-family: 'DM Sans', sans-serif;
   font-size: 0.8rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(240,248,255,0.5);
   transition: border-color 0.2s, color 0.2s;
 }
-.btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+.btn-secondary:hover { border-color: #f0f8ff; color: #f0f8ff; }
 
 /* ── SECTION BASE ── */
 section { padding: 6rem 2rem; }
@@ -485,32 +485,29 @@ footer {
     <div class="section-label">Cover Letter</div>
     <h2 class="section-title">Targeted for the<br>right opportunity.</h2>
     <p style="color:var(--muted);font-size:0.95rem;margin-bottom:2.5rem;max-width:540px;">Three versions — each written for a specific role. Select the one that fits the position you are hiring for.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:900px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:900px;align-items:stretch;">
 
       <a href="cover-letter-dba.html" target="_blank" style="text-decoration:none;">
-        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
-          <div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Database Engineer / DBRE</div>
+        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'"><div style="display:flex;flex-direction:column;height:100%;"><div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Database Engineer / DBRE</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:0.8rem;">Engine Room<br>Engineer</div>
           <div style="font-size:0.8rem;color:var(--muted);line-height:1.7;">Focused on hands-on DB engineering depth — Oracle, PostgreSQL, HA/DR architecture, performance tuning, and platform reliability.</div>
-          <div style="margin-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">Read Letter →</div>
+          <div style="margin-top:auto;padding-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">Read Letter →</div>
         </div>
       </a>
 
       <a href="cover-letter-tam.html" target="_blank" style="text-decoration:none;">
-        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
-          <div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Technical Account Manager</div>
+        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'"><div style="display:flex;flex-direction:column;height:100%;"><div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Technical Account Manager</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:0.8rem;">Engineer Who<br>Faces the Customer</div>
           <div style="font-size:0.8rem;color:var(--muted);line-height:1.7;">Focused on technically-led customer advisory — architecture reviews, EBRs, and customer success built on engineering credibility.</div>
-          <div style="margin-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">Read Letter →</div>
+          <div style="margin-top:auto;padding-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">Read Letter →</div>
         </div>
       </a>
 
       <a href="cover-letter-sa.html" target="_blank" style="text-decoration:none;">
-        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
-          <div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Solutions Architect</div>
+        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'"><div style="display:flex;flex-direction:column;height:100%;"><div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Solutions Architect</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:0.8rem;">Architect Who's<br>Been On-Call</div>
           <div style="font-size:0.8rem;color:var(--muted);line-height:1.7;">Focused on platform and data architecture — cloud-native design, multi-domain breadth, and solutions built from production experience.</div>
-          <div style="margin-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">Read Letter →</div>
+          <div style="margin-top:auto;padding-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">Read Letter →</div>
         </div>
       </a>
 
@@ -524,32 +521,29 @@ footer {
     <div class="section-label">Résumé</div>
     <h2 class="section-title">Targeted for the<br>right role.</h2>
     <p style="color:var(--muted);font-size:0.95rem;margin-bottom:2.5rem;max-width:540px;">Three versions — each positioned for a specific career track. Select the one that matches the role you are hiring for.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:900px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:900px;align-items:stretch;">
 
       <a href="resume-dbre.html" target="_blank" style="text-decoration:none;">
-        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
-          <div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Database Reliability Engineer</div>
+        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'"><div style="display:flex;flex-direction:column;height:100%;"><div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Database Reliability Engineer</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:0.8rem;">Principal DBRE<br>/ Database Engineer</div>
           <div style="font-size:0.8rem;color:var(--muted);line-height:1.7;">PostgreSQL · Oracle RAC/ASM · HA/DR · AWS RDS · Performance Engineering · 99.99% uptime delivery</div>
-          <div style="margin-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">View Résumé →</div>
+          <div style="margin-top:auto;padding-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">View Résumé →</div>
         </div>
       </a>
 
       <a href="resume-tam.html" target="_blank" style="text-decoration:none;">
-        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
-          <div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Technical Account Manager</div>
+        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'"><div style="display:flex;flex-direction:column;height:100%;"><div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Technical Account Manager</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:0.8rem;">Senior TAM<br>/ Customer Success</div>
           <div style="font-size:0.8rem;color:var(--muted);line-height:1.7;">EBRs · Architecture Advisory · Stakeholder Management · Enterprise Accounts · EMEA CS Model</div>
-          <div style="margin-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">View Résumé →</div>
+          <div style="margin-top:auto;padding-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">View Résumé →</div>
         </div>
       </a>
 
       <a href="resume-sa.html" target="_blank" style="text-decoration:none;">
-        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
-          <div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Solutions / Cloud Architect</div>
+        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'"><div style="display:flex;flex-direction:column;height:100%;"><div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Solutions / Cloud Architect</div>
           <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:0.8rem;">Cloud Database<br>Architect</div>
           <div style="font-size:0.8rem;color:var(--muted);line-height:1.7;">HA/DR Design · Cloud Migration · Terraform · Multi-engine Architecture · Modernisation Roadmaps</div>
-          <div style="margin-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">View Résumé →</div>
+          <div style="margin-top:auto;padding-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">View Résumé →</div>
         </div>
       </a>
 
