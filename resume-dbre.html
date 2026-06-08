@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Résumé — Shemal Gandhi | Database Reliability Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,700;1,300&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#1e3a5f;--surface:#14141f;--card:#1a1a2a;--border:#2a2a3d;--gold:#1e3a5f;--gold-dim:#3a6090;--text:#e8e4db;--muted:#7a7a8e;--white:#f5f0e8; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:#1e3a5f;color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;min-height:100vh;padding:0 0 4rem;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;background:rgba(30,58,95,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;color:var(--gold);letter-spacing:0.04em;text-decoration:none;}
+.nav-links{display:flex;gap:2rem;}
+.nav-links a{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--gold);}
+.print-btn{padding:0.5rem 1.4rem;background:var(--gold);color:var(--bg);font-family:'DM Sans',sans-serif;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;border:none;cursor:pointer;transition:opacity 0.2s;}
+.print-btn:hover{opacity:0.85;}
+.resume-header{background:var(--surface);border-bottom:1px solid var(--border);padding:3rem 4rem 2.5rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;}
+.rh-name{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,3.6rem);font-weight:700;color:var(--white);line-height:1;letter-spacing:-1px;}
+.rh-title{font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-top:0.6rem;font-weight:500;}
+.rh-contact{text-align:right;font-size:0.8rem;color:var(--muted);line-height:2;}
+.rh-contact a{color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.rh-contact a:hover{color:var(--gold);}
+.summary-bar{background:var(--card);border-bottom:1px solid var(--border);border-left:4px solid var(--gold);padding:1.5rem 4rem;font-size:0.88rem;line-height:1.85;color:#5a7a9a;}
+.summary-bar strong{color:var(--text);font-weight:500;}
+.highlights-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:1.8rem 4rem;}
+.highlights-bar .hl-title{font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.hl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0.6rem;}
+.hl-item{display:flex;align-items:baseline;gap:0.6rem;font-size:0.83rem;color:#5a7a9a;line-height:1.6;}
+.hl-item::before{content:'▸';color:var(--gold);font-size:0.65rem;flex-shrink:0;}
+.hl-item strong{color:var(--text);font-weight:500;}
+.core-skills-bar{background:var(--card);border-bottom:1px solid var(--border);padding:1.2rem 4rem;display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;}
+.cs-label{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-right:0.5rem;white-space:nowrap;}
+.cs-tag{background:var(--surface);border:1px solid var(--border);padding:0.25rem 0.7rem;font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--text);}
+.resume-body{display:grid;grid-template-columns:1fr 280px;gap:0;}
+.main-col{border-right:1px solid var(--border);padding:2.5rem 3rem 2.5rem 4rem;}
+.side-col{padding:2.5rem 2rem 2.5rem 2.5rem;background:var(--surface);}
+.sec-label{font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--border);padding-bottom:0.6rem;margin-bottom:1.8rem;margin-top:2.5rem;}
+.sec-label:first-child{margin-top:0;}
+.exp-item{margin-bottom:2.2rem;}
+.exp-top{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:1rem;margin-bottom:0.2rem;}
+.exp-role{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;color:var(--white);line-height:1.2;}
+.exp-date{font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--muted);white-space:nowrap;text-align:right;}
+.exp-company{font-size:0.78rem;color:var(--gold);letter-spacing:0.04em;margin-bottom:0.8rem;}
+.exp-bullets{list-style:none;}
+.exp-bullets li{font-size:0.84rem;color:#5a7a9a;line-height:1.75;padding-left:1.2rem;position:relative;margin-bottom:0.35rem;}
+.exp-bullets li::before{content:'—';position:absolute;left:0;color:var(--gold-dim);font-size:0.7rem;top:0.1rem;}
+.exp-bullets li strong{color:var(--text);font-weight:500;}
+.skill-group{margin-bottom:1.6rem;}
+.skill-group-label{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;}
+.skill-tags{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.skill-tag{background:var(--card);border:1px solid var(--border);padding:0.3rem 0.65rem;font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--text);letter-spacing:0.03em;transition:border-color 0.2s;}
+.skill-tag:hover{border-color:var(--gold);}
+.edu-item{margin-bottom:1.2rem;}
+.edu-degree{font-size:0.88rem;color:var(--text);font-weight:400;line-height:1.4;}
+.edu-school{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--muted);margin-top:0.2rem;}
+.cert-item{border-left:2px solid var(--border);padding-left:0.8rem;margin-bottom:0.9rem;}
+.cert-item:hover{border-color:var(--gold);}
+.cert-name{font-size:0.82rem;color:var(--text);line-height:1.4;}
+.cert-date{font-family:'DM Mono',monospace;font-size:0.67rem;color:var(--muted);margin-top:0.15rem;}
+.domains-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.5rem;}
+.domain-pill{font-size:0.7rem;color:var(--gold);border:1px solid var(--gold-dim);padding:0.25rem 0.7rem;letter-spacing:0.06em;}
+@media print{nav{display:none;}body{background:#f8fbff;padding:0;}.resume-header{padding:1.5rem 2rem;}.summary-bar,.highlights-bar,.core-skills-bar{padding:1rem 2rem;}.main-col{padding:1.5rem 2rem;}.side-col{padding:1.5rem;}}
+@media(max-width:800px){.resume-header{grid-template-columns:1fr;padding:2rem 1.5rem;}.rh-contact{text-align:left;}.summary-bar,.highlights-bar,.core-skills-bar{padding:1.2rem 1.5rem;}.resume-body{grid-template-columns:1fr;}.main-col{padding:2rem 1.5rem;border-right:none;border-bottom:1px solid var(--border);}.side-col{padding:2rem 1.5rem;}nav{padding:1rem 1.5rem;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">← Shemal Gandhi</a>
+  <div class="nav-links">
+    <a href="index.html#about">About</a>
+    <a href="index.html#cover-letter">Cover Letter</a>
+    <a href="#" style="color:var(--gold)">Résumé — DBRE</a>
+  </div>
+  <button class="print-btn" onclick="window.print()">⬇ Save PDF</button>
+</nav>
+
+<div class="resume-header">
+  <div>
+    <div class="rh-name">Shemal Gandhi</div>
+    <div class="rh-title">Principal Database Reliability Engineer &nbsp;·&nbsp; PostgreSQL &nbsp;·&nbsp; Oracle &nbsp;·&nbsp; AWS &nbsp;·&nbsp; HA/DR</div>
+  </div>
+  <div class="rh-contact">
+    Mumbai, India 400615<br>
+    <a href="tel:+919096790297">+91 90967 90297</a><br>
+    <a href="mailto:shemalrgandhi@gmail.com">shemalrgandhi@gmail.com</a><br>
+    <a href="https://www.linkedin.com/in/shemal-gandhi-9a73ab60/" target="_blank">linkedin.com/in/shemal-gandhi</a>
+  </div>
+</div>
+
+<div class="summary-bar">
+  Database reliability engineer with <strong>12+ years of hands-on experience</strong> managing, tuning, and scaling mission-critical database systems across BFSI, government, ERP, oil &amp; gas retail, and SaaS domains. Deep expertise in <strong>PostgreSQL, Oracle RAC/ASM, AWS RDS/Aurora, HA/DR architecture, and performance engineering</strong> — with a proven track record of maintaining 99.99%+ uptime across complex multi-database environments. Currently applying that depth in a post-sales advisory role at EDB; seeking to return to a dedicated <strong>DBRE or Senior Database Engineering</strong> position.
+</div>
+
+<div class="highlights-bar">
+  <div class="hl-title">Selected Career Highlights</div>
+  <div class="hl-grid">
+    <div class="hl-item"><strong>99.99% uptime</strong> delivered for IoT analytics workloads across 5+ database engines at GVR/Invenco</div>
+    <div class="hl-item"><strong>12+ years</strong> managing Oracle 11g–19c, PostgreSQL 9–17, MySQL, MSSQL in production</div>
+    <div class="hl-item"><strong>800M+ taxpayers</strong> supported via PostgreSQL platform health &amp; upgrade advisory at EDB</div>
+    <div class="hl-item"><strong>100% uptime</strong> maintained for NSE (National Stock Exchange) Oracle DB operations</div>
+    <div class="hl-item"><strong>200,000+ users</strong> served via Ultimatix — TCS's enterprise HCM/ERP platform (SRE team)</div>
+    <div class="hl-item"><strong>SOX &amp; PCI compliance</strong> maintained across all DB and cloud infrastructure at GVR/Invenco</div>
+    <div class="hl-item"><strong>Full DevOps pipeline</strong> ownership — Terraform, Ansible, Jenkins, Spinnaker, Flyway</div>
+    <div class="hl-item"><strong>Cross-platform migrations</strong> — Oracle to PostgreSQL, on-prem to AWS RDS/Aurora</div>
+  </div>
+</div>
+
+<div class="core-skills-bar">
+  <span class="cs-label">Core Expertise</span>
+  <span class="cs-tag">PostgreSQL</span><span class="cs-tag">Oracle RAC/ASM</span><span class="cs-tag">Data Guard</span><span class="cs-tag">RMAN</span><span class="cs-tag">AWS RDS</span><span class="cs-tag">Aurora</span><span class="cs-tag">Barman</span><span class="cs-tag">pgBackRest</span><span class="cs-tag">EFM</span><span class="cs-tag">HA/DR</span><span class="cs-tag">Terraform</span><span class="cs-tag">Ansible</span><span class="cs-tag">Snowflake</span><span class="cs-tag">Kafka</span><span class="cs-tag">MongoDB</span>
+</div>
+
+<div class="resume-body">
+  <div class="main-col">
+    <div class="sec-label">Experience</div>
+
+    <div class="exp-item">
+      <div class="exp-top">
+        <div class="exp-role">Senior Technical Account Manager</div>
+        <div class="exp-date">Dec 2025 – Present</div>
+      </div>
+      <div class="exp-company">EDB (EnterpriseDB) &nbsp;·&nbsp; Mumbai, India</div>
+      <ul class="exp-bullets">
+        <li>Primary post-sales technical partner for EDB's largest enterprise Postgres accounts — leading architecture reviews, HA/DR planning, and performance diagnostics across EPAS, PGD, EFM, PEM, Barman, and WarehousePG.</li>
+        <li><strong>PostgreSQL platform supporting 800M+ taxpayers</strong> — proactive health checks, autovacuum tuning, version upgrade planning (EFM, PEM, PgBouncer) ahead of peak filing windows.</li>
+        <li>Conducted deep-dive pgBadger and Lasso report analysis — identified huge pages misconfiguration, bgwriter underprovisioning, and buffer churn from unindexed full-table scans on 25M+ row tables.</li>
+        <li>Deployed EDB PGD-S and PGD-X HA clusters via TPA on Docker/EC2 (RHEL 8); OS kernel parameter tuning (vm.overcommit, THP, dirty page settings) for production EPAS environments.</li>
+        <li>Built SQL-based diagnostic frameworks for bloat detection, VACUUM/FREEZE monitoring, and autovacuum health.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-top">
+        <div class="exp-role">Technology Lead — SQL &amp; NoSQL Databases | AWS</div>
+        <div class="exp-date">May 2024 – Dec 2025</div>
+      </div>
+      <div class="exp-company">Invenco by GVR (Gilbarco Veeder-Root) &nbsp;·&nbsp; Mumbai, India</div>
+      <ul class="exp-bullets">
+        <li>Led Insite360 Database team — architected and operated systems ensuring <strong>99.99% uptime</strong> for critical IoT analytics workloads across Oracle, PostgreSQL, MySQL, MSSQL, AWS RDS &amp; Aurora.</li>
+        <li>Led team of DBAs — overseeing planning, deployments, patching, HA/DR, and performance tuning across all engines.</li>
+        <li>Owned full DevOps pipeline: Git, Jenkins, Ansible, Terraform, Spinnaker for database CI/CD; Flyway for schema migrations.</li>
+        <li>Administered NoSQL stack: DynamoDB (order reconciliation), MongoDB Atlas (data plane), ELK/Kafka (IoT streaming), Redis.</li>
+        <li>Snowflake data warehouse administration; Prometheus &amp; Grafana observability; SOX &amp; PCI compliance.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-top">
+        <div class="exp-role">Database Reliability Engineer — Databases | AWS | DevOps</div>
+        <div class="exp-date">Mar 2021 – May 2024</div>
+      </div>
+      <div class="exp-company">Invenco by GVR (Gilbarco Veeder-Root) &nbsp;·&nbsp; Mumbai, India</div>
+      <ul class="exp-bullets">
+        <li>Full lifecycle DBRE ownership — on-premises Oracle EE 11g–19c on EC2 with Physical Data Guard &amp; DG Broker.</li>
+        <li>AWS RDS &amp; Aurora (MySQL 5.7–8.0, PostgreSQL 10–14) — multi-AZ, cross-region HA; AWS DMS migrations.</li>
+        <li>Infrastructure automation via Terraform, Jenkins, Git; IAM &amp; Landing Zone (VPC, SG, Gateways).</li>
+        <li>Snowflake data lake administration; Prometheus &amp; Grafana observability stack; SOX &amp; PCI compliance.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-top">
+        <div class="exp-role">Lead Database Administrator — Oracle, PostgreSQL &amp; MSSQL</div>
+        <div class="exp-date">Aug 2018 – Feb 2021</div>
+      </div>
+      <div class="exp-company">Capgemini &nbsp;·&nbsp; Selective Insurance Group, BFSI — North America</div>
+      <ul class="exp-bullets">
+        <li>Lead DBA for Claims, Underwriting &amp; Product Lifecycle — Oracle 11g/12c upgraded to 19c; PostgreSQL 9–13; MSSQL 2008 R2.</li>
+        <li>24×7 DBA operations: backup, HA, DR quarterly drills, security patching, performance tuning, compliance audits.</li>
+        <li>IBM Netezza Warehouse — access management, replication, backups. Shell/Bash automation of daily DBA processes.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-top">
+        <div class="exp-role">Senior Systems Analyst — Oracle DBA</div>
+        <div class="exp-date">Apr 2018 – Aug 2018</div>
+      </div>
+      <div class="exp-company">National Stock Exchange of India (NSE) &nbsp;·&nbsp; Mumbai, India</div>
+      <ul class="exp-bullets">
+        <li>Oracle DBA (11g–12c) for NSE technology operations — maintained <strong>100% database uptime</strong> in India's highest-throughput equities exchange.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-top">
+        <div class="exp-role">Database Administrator — Oracle &amp; PostgreSQL | SRE</div>
+        <div class="exp-date">Dec 2013 – Apr 2018</div>
+      </div>
+      <div class="exp-company">Tata Consultancy Services (TCS) &nbsp;·&nbsp; Mumbai, India</div>
+      <ul class="exp-bullets">
+        <li>SRE team DBA for <strong>Ultimatix</strong> — TCS's internal HCM/ERP/Finance platform serving <strong>200,000+ employees</strong>.</li>
+        <li>Oracle 11g–12c EE/SE; PostgreSQL 9.1–9.6 (EDB PPAS); HA/DR setup, BCP drills, cross-platform migrations, performance tuning.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="side-col">
+    <div class="sec-label" style="margin-top:0">Technical Skills</div>
+    <div class="skill-group">
+      <div class="skill-group-label">PostgreSQL / EDB</div>
+      <div class="skill-tags">
+        <span class="skill-tag">PostgreSQL 9–17</span><span class="skill-tag">EDB EPAS</span><span class="skill-tag">PGD</span><span class="skill-tag">EFM</span><span class="skill-tag">PEM</span><span class="skill-tag">Barman</span><span class="skill-tag">pgBackRest</span><span class="skill-tag">PgBouncer</span><span class="skill-tag">Patroni</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">Oracle</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Oracle 11g–19c</span><span class="skill-tag">RAC / ASM</span><span class="skill-tag">Data Guard</span><span class="skill-tag">RMAN</span><span class="skill-tag">GoldenGate</span><span class="skill-tag">Multi-tenant</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">Other RDBMS</div>
+      <div class="skill-tags">
+        <span class="skill-tag">MySQL 5.7–8.0</span><span class="skill-tag">MSSQL 2008–2018</span><span class="skill-tag">IBM Netezza</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">Cloud / DBaaS</div>
+      <div class="skill-tags">
+        <span class="skill-tag">AWS RDS</span><span class="skill-tag">Aurora</span><span class="skill-tag">EC2 / S3</span><span class="skill-tag">DMS</span><span class="skill-tag">IAM / VPC</span><span class="skill-tag">OCI</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">NoSQL & Streaming</div>
+      <div class="skill-tags">
+        <span class="skill-tag">MongoDB Atlas</span><span class="skill-tag">DynamoDB</span><span class="skill-tag">Redis</span><span class="skill-tag">Elasticsearch</span><span class="skill-tag">Apache Kafka</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">DevOps & Automation</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Terraform</span><span class="skill-tag">Ansible</span><span class="skill-tag">Jenkins</span><span class="skill-tag">Spinnaker</span><span class="skill-tag">Git</span><span class="skill-tag">Flyway</span><span class="skill-tag">Grafana</span><span class="skill-tag">Prometheus</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">Data Warehousing</div>
+      <div class="skill-tags"><span class="skill-tag">Snowflake</span><span class="skill-tag">IBM Netezza</span><span class="skill-tag">WarehousePG</span></div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">OS</div>
+      <div class="skill-tags"><span class="skill-tag">RHEL</span><span class="skill-tag">Oracle Linux</span><span class="skill-tag">IBM AIX</span><span class="skill-tag">HP Unix</span></div>
+    </div>
+    <div class="sec-label">Education</div>
+    <div class="edu-item">
+      <div class="edu-degree">B.E. — Instrumentation Engineering</div>
+      <div class="edu-school">Mumbai University &nbsp;·&nbsp; 2013</div>
+    </div>
+    <div class="sec-label">Certifications</div>
+    <div class="cert-item"><div class="cert-name">EDB Postgres® AI Essentials – v18</div><div class="cert-date">May 2026</div></div>
+    <div class="cert-item"><div class="cert-name">EDB Postgres® AI Essentials – v17</div><div class="cert-date">Jan 2026</div></div>
+    <div class="cert-item"><div class="cert-name">EDB Postgres® AI Essentials – v16</div><div class="cert-date">Jan 2026</div></div>
+    <div class="cert-item"><div class="cert-name">Oracle Cloud Data Management Foundation</div><div class="cert-date">Aug 2022</div></div>
+    <div class="cert-item"><div class="cert-name">Snowflake Fundamentals</div><div class="cert-date">Aug 2022</div></div>
+    <div class="cert-item"><div class="cert-name">ITILv4 Foundation</div><div class="cert-date">Jan 2021</div></div>
+    <div class="sec-label">Domains</div>
+    <div class="domains-row">
+      <span class="domain-pill">BFSI</span><span class="domain-pill">Government</span><span class="domain-pill">ERP</span><span class="domain-pill">Oil &amp; Gas</span><span class="domain-pill">SaaS</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

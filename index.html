@@ -7,21 +7,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,700;1,300;1,500&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #0d0d14;
-  --surface: #14141f;
-  --card: #1a1a2a;
-  --border: #2a2a3d;
-  --gold: #c9a96e;
-  --gold-dim: #8a6f42;
-  --text: #e8e4db;
-  --muted: #7a7a8e;
+  --bg: #f8fbff;
+  --surface: #ffffff;
+  --card: #dce8f5;
+  --border: #b8d0e8;
+  --gold: #1e3a5f;
+  --gold-dim: #3a6090;
+  --text: #1e3a5f;
+  --muted: #5a7a9a;
   --accent2: #4a7fa5;
-  --white: #f5f0e8;
+  --white: #1e3a5f;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--bg);
+  background: #1e3a5f;
   color: var(--text);
   font-family: 'DM Sans', sans-serif;
   font-weight: 300;
@@ -34,7 +34,7 @@ nav {
   z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1.2rem 3rem;
-  background: rgba(13,13,20,0.85);
+  background: rgba(30,58,95,0.95);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
@@ -42,7 +42,7 @@ nav {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
   font-weight: 500;
-  color: var(--gold);
+  color: #64b5f6;
   letter-spacing: 0.04em;
 }
 .nav-links { display: flex; gap: 2rem; }
@@ -63,24 +63,26 @@ nav {
   position: relative;
   overflow: hidden;
   padding: 6rem 2rem 4rem;
+  background: #1e3a5f;
 }
 .hero-grid {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(201,169,110,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,169,110,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(100,181,246,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100,181,246,0.06) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 .hero-glow {
   position: absolute;
   width: 600px; height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(30,58,95,0.08) 0%, transparent 70%);
   top: 50%; left: 50%; transform: translate(-50%, -50%);
   pointer-events: none;
 }
 .hero-content { position: relative; text-align: center; max-width: 800px; }
 .hero-tag {
+  color: #64b5f6 !important;
   display: inline-block;
   font-size: 0.72rem;
   letter-spacing: 0.22em;
@@ -96,12 +98,13 @@ nav {
   font-size: clamp(4rem, 10vw, 7.5rem);
   font-weight: 700;
   line-height: 0.9;
-  color: var(--white);
+  color: #f0f8ff;
   letter-spacing: -2px;
   animation: fadeUp 0.8s 0.15s ease both;
 }
 .hero-name span { color: var(--gold); }
 .hero-roles {
+  color: #90b8d8 !important;
   margin-top: 1.8rem;
   font-size: 0.88rem;
   letter-spacing: 0.18em;
@@ -111,12 +114,12 @@ nav {
   flex-wrap: wrap;
   animation: fadeUp 0.8s 0.3s ease both;
 }
-.hero-roles span { color: var(--gold-dim); font-size: 0.6rem; }
+.hero-roles span { color: #3a6090; font-size: 0.6rem; }
 .hero-desc {
   margin-top: 2rem;
   font-size: 1.05rem;
   line-height: 1.8;
-  color: var(--muted);
+  color: #90b8d8;
   max-width: 540px;
   margin-left: auto; margin-right: auto;
   animation: fadeUp 0.8s 0.45s ease both;
@@ -178,14 +181,14 @@ section { padding: 6rem 2rem; }
 }
 
 /* ── ABOUT ── */
-#about { background: var(--surface); }
+#about { background: #ffffff; }
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: start;
 }
-.about-bio { font-size: 0.97rem; line-height: 1.9; color: #b0aaaa; }
+.about-bio { font-size: 0.97rem; line-height: 1.9; color: #5a7a9a; }
 .about-bio p { margin-bottom: 1.2rem; }
 .about-bio strong { color: var(--text); font-weight: 500; }
 .skills-grid {
@@ -215,12 +218,12 @@ section { padding: 6rem 2rem; }
 .skills-label:first-child { margin-top: 0; }
 
 /* ── COVER LETTER ── */
-#cover-letter { background: var(--bg); }
+#cover-letter { background: #1e3a5f; }
 .letter-card {
   background: var(--surface);
   border: 1px solid var(--border);
   padding: 4rem;
-  border-left: 4px solid var(--gold);
+  border-left: 4px solid #1e3a5f;
   max-width: 780px;
 }
 .letter-header {
@@ -251,7 +254,7 @@ section { padding: 6rem 2rem; }
   color: var(--text);
   margin-bottom: 1.5rem;
 }
-.letter-body p { font-size: 0.92rem; line-height: 1.9; color: #9a96a8; margin-bottom: 1.2rem; }
+.letter-body p { font-size: 0.92rem; line-height: 1.9; color: #5a7a9a; margin-bottom: 1.2rem; }
 .letter-body p strong { color: var(--text); font-weight: 500; }
 .letter-quote {
   border-left: 2px solid var(--gold);
@@ -281,7 +284,7 @@ section { padding: 6rem 2rem; }
 }
 
 /* ── RESUME ── */
-#resume { background: var(--surface); }
+#resume { background: #ffffff; }
 .resume-section { margin-bottom: 3rem; }
 .resume-section-title {
   font-size: 0.68rem;
@@ -311,7 +314,7 @@ section { padding: 6rem 2rem; }
 .resume-bullets { margin-top: 0.8rem; grid-column: 1 / -1; }
 .resume-bullets li {
   font-size: 0.87rem;
-  color: #8a8698;
+  color: #5a7a9a;
   line-height: 1.75;
   margin-bottom: 0.4rem;
   padding-left: 1.2rem;
@@ -321,7 +324,7 @@ section { padding: 6rem 2rem; }
 .resume-bullets li::before {
   content: '—';
   position: absolute; left: 0;
-  color: var(--gold-dim);
+  color: #3a6090;
   font-size: 0.75rem;
 }
 .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
@@ -339,7 +342,7 @@ section { padding: 6rem 2rem; }
 }
 
 /* ── CONTACT ── */
-#contact { background: var(--bg); }
+#contact { background: #1e3a5f; }
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -519,80 +522,37 @@ footer {
 <section id="resume">
   <div class="container">
     <div class="section-label">Résumé</div>
-    <h2 class="section-title">12+ years of<br>delivering excellence.</h2>
+    <h2 class="section-title">Targeted for the<br>right role.</h2>
+    <p style="color:var(--muted);font-size:0.95rem;margin-bottom:2.5rem;max-width:540px;">Three versions — each positioned for a specific career track. Select the one that matches the role you are hiring for.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:900px;">
 
-    <div class="resume-section">
-      <div class="resume-section-title">Experience</div>
+      <a href="resume-dbre.html" target="_blank" style="text-decoration:none;">
+        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Database Reliability Engineer</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:0.8rem;">Principal DBRE<br>/ Database Engineer</div>
+          <div style="font-size:0.8rem;color:var(--muted);line-height:1.7;">PostgreSQL · Oracle RAC/ASM · HA/DR · AWS RDS · Performance Engineering · 99.99% uptime delivery</div>
+          <div style="margin-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">View Résumé →</div>
+        </div>
+      </a>
 
-      <div class="resume-item">
-        <div>
-          <div class="resume-role">Senior Technical Account Manager</div>
-          <div class="resume-company">EnterpriseDB (EDB)</div>
+      <a href="resume-tam.html" target="_blank" style="text-decoration:none;">
+        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Technical Account Manager</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:0.8rem;">Senior TAM<br>/ Customer Success</div>
+          <div style="font-size:0.8rem;color:var(--muted);line-height:1.7;">EBRs · Architecture Advisory · Stakeholder Management · Enterprise Accounts · EMEA CS Model</div>
+          <div style="margin-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">View Résumé →</div>
         </div>
-        <div class="resume-date">Dec 2025 – Present<br>Mumbai, IN</div>
-        <ul class="resume-bullets">
-          <li>Primary technical liaison for enterprise accounts including ITD (India's Income Tax Department) and HDFC, managing critical PostgreSQL/EPAS environments.</li>
-          <li>Lead proactive technical engagements: architecture reviews, DR planning, replication topology design, and lifecycle upgrade strategy for peak filing periods (July–August).</li>
-          <li>Built SQL-based diagnostic frameworks for bloat detection, VACUUM/FREEZE monitoring, and autovacuum health in large-scale production environments.</li>
-          <li>Deployed EDB PGD-S and PGD-X HA clusters using TPA on Docker/EC2 (RHEL 8); developed customer-facing demo playbooks for WarehousePG/Greenplum-compatible MPP.</li>
-          <li>Structured weekly cadence calls, QBRs, and executive briefings; flagged EOL risks across EFM, PEM, and PgBouncer for strategic account planning.</li>
-        </ul>
-      </div>
+      </a>
 
-      <div class="resume-item">
-        <div>
-          <div class="resume-role">Senior Database Administrator / Cloud Engineer</div>
-          <div class="resume-company">Previous Roles (12+ years experience)</div>
+      <a href="resume-sa.html" target="_blank" style="text-decoration:none;">
+        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Solutions / Cloud Architect</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:0.8rem;">Cloud Database<br>Architect</div>
+          <div style="font-size:0.8rem;color:var(--muted);line-height:1.7;">HA/DR Design · Cloud Migration · Terraform · Multi-engine Architecture · Modernisation Roadmaps</div>
+          <div style="margin-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">View Résumé →</div>
         </div>
-        <div class="resume-date">2012 – 2025<br>India</div>
-        <ul class="resume-bullets">
-          <li>Administered enterprise PostgreSQL, Oracle RAC/ASM, and NoSQL platforms across banking, government, and enterprise verticals.</li>
-          <li>Designed and implemented HA/DR architectures using Patroni, EFM, Barman, pgBackRest, and streaming replication across multi-site topologies.</li>
-          <li>Led cloud migrations and DevOps automation on AWS and Azure using Ansible, Docker, and Kubernetes.</li>
-          <li>OS-level kernel parameter tuning (vm.overcommit, THP, dirty page settings) for production EPAS and Oracle environments.</li>
-          <li>Collaborated with cross-functional teams on capacity planning, performance diagnostics (pgBadger, AWR, Lasso), and database lifecycle management.</li>
-        </ul>
-      </div>
-    </div>
+      </a>
 
-    <div class="resume-section">
-      <div class="resume-section-title">Technical Expertise</div>
-      <div class="skills-grid" style="grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap:0.7rem;">
-        <div class="skill-pill">PostgreSQL 10–17</div>
-        <div class="skill-pill">EDB EPAS / PGD</div>
-        <div class="skill-pill">Oracle RAC / ASM</div>
-        <div class="skill-pill">Barman / pgBackRest</div>
-        <div class="skill-pill">EFM / PEM / PgBouncer</div>
-        <div class="skill-pill">Greenplum / WarehousePG</div>
-        <div class="skill-pill">Ansible / TPA</div>
-        <div class="skill-pill">Docker / Kubernetes</div>
-        <div class="skill-pill">AWS / Azure</div>
-        <div class="skill-pill">RHEL / CentOS / Ubuntu</div>
-        <div class="skill-pill">Performance Tuning</div>
-        <div class="skill-pill">TAM / Customer Success</div>
-      </div>
-    </div>
-
-    <div class="resume-section">
-      <div class="resume-section-title">Education & Certifications</div>
-      <div class="cert-grid">
-        <div class="cert-card">
-          <div class="cert-name">B.E. / B.Tech (or relevant degree)</div>
-          <div class="cert-issuer">University — Add your details</div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-name">EDB Postgres Professional</div>
-          <div class="cert-issuer">EnterpriseDB — Add year</div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-name">AWS / Azure Cloud Certification</div>
-          <div class="cert-issuer">Add your specific cert</div>
-        </div>
-        <div class="cert-card">
-          <div class="cert-name">Oracle DBA / OCA / OCP</div>
-          <div class="cert-issuer">Oracle — Add if applicable</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
