@@ -3,189 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QR Code — Shemal Portfolio</title>
+<title>QR Code — Shemal Gandhi Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
-:root {
-  --bg: #0f2444;
-  --surface: #1a3a6b;
-  --card: #152e58;
-  --border: #2a4a7a;
-  --gold: #7aaee8;
-  --text: #f0f8ff;
-  --muted: #a8c4e0;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  background: #1e3a5f;
-  color: var(--text);
-  font-family: 'DM Sans', sans-serif;
-  min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
-  padding: 2rem;
-}
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-top: 4px solid var(--gold);
-  padding: 3rem 3.5rem;
-  max-width: 500px;
-  width: 100%;
-  text-align: center;
-}
-.label {
-  font-size: 0.68rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.5rem;
-}
-h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.2rem;
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: 0.4rem;
-}
-.sub {
-  font-size: 0.82rem;
-  color: var(--muted);
-  margin-bottom: 2rem;
-}
-.url-input-wrap {
-  display: flex; gap: 0;
-  margin-bottom: 2rem;
-}
-.url-input {
-  flex: 1;
-  padding: 0.75rem 1rem;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-right: none;
-  color: var(--text);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  outline: none;
-}
-.url-input:focus { border-color: var(--gold); }
-.gen-btn {
-  padding: 0.75rem 1.4rem;
-  background: var(--gold);
-  color: var(--bg);
-  border: none;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 500;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-.gen-btn:hover { opacity: 0.85; }
-#qr-container {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-#qr-box {
-  background: #ffffff;
-  padding: 1.5rem;
-  display: inline-block;
-}
-.qr-caption {
-  font-size: 0.78rem;
-  color: var(--muted);
-  letter-spacing: 0.06em;
-}
-.qr-caption strong { color: var(--text); }
-.download-btn {
-  display: inline-block;
-  padding: 0.65rem 2rem;
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text);
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
-  font-family: 'DM Sans', sans-serif;
-}
-.download-btn:hover { border-color: var(--gold); color: var(--gold); }
-.hint {
-  font-size: 0.75rem;
-  color: var(--muted);
-  margin-top: 2rem;
-  line-height: 1.7;
-  border-top: 1px solid var(--border);
-  padding-top: 1.5rem;
-}
-.hint a { color: var(--gold); text-decoration: none; }
+:root{--navy:#1e3a5f;--navy-light:#4a7aaa;--rule:#d0dcea;--soft:#f4f7fb;--muted:#5a7a9a;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--soft);color:var(--navy);font-family:'DM Sans',sans-serif;font-weight:300;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;}
+.card{background:#fff;border:1px solid var(--rule);border-top:4px solid var(--navy);padding:3rem 3.5rem;max-width:480px;width:100%;text-align:center;box-shadow:0 2px 24px rgba(30,58,95,0.08);}
+.label{font-size:0.65rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--navy-light);margin-bottom:0.5rem;}
+h1{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--navy);margin-bottom:0.4rem;}
+.sub{font-size:0.82rem;color:var(--muted);margin-bottom:2rem;}
+.url-input-wrap{display:flex;margin-bottom:2rem;}
+.url-input{flex:1;padding:0.7rem 1rem;background:#fff;border:1px solid var(--rule);border-right:none;color:var(--navy);font-family:'DM Sans',sans-serif;font-size:0.84rem;outline:none;}
+.url-input:focus{border-color:var(--navy);}
+.gen-btn{padding:0.7rem 1.3rem;background:var(--navy);color:#fff;border:none;font-family:'DM Sans',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;cursor:pointer;}
+.gen-btn:hover{background:#2d5a8e;}
+#qr-container{display:none;flex-direction:column;align-items:center;gap:1.4rem;}
+#qr-box{background:#fff;padding:1.2rem;border:1px solid var(--rule);display:inline-block;}
+.qr-caption{font-size:0.78rem;color:var(--muted);}
+.qr-caption strong{color:var(--navy);}
+.download-btn{padding:0.55rem 1.8rem;background:transparent;border:1px solid var(--rule);color:var(--navy);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;}
+.download-btn:hover{border-color:var(--navy);}
+.hint{font-size:0.74rem;color:var(--muted);margin-top:2rem;line-height:1.8;border-top:1px solid var(--rule);padding-top:1.4rem;text-align:left;}
+.hint a{color:var(--navy);}
+.hint strong{color:var(--navy);}
 </style>
 </head>
 <body>
 <div class="card">
   <div class="label">Portfolio QR Code</div>
-  <h1>Shemal</h1>
+  <h1>Shemal Gandhi</h1>
   <p class="sub">Enter your hosted site URL to generate a scannable QR code</p>
-
   <div class="url-input-wrap">
     <input class="url-input" type="url" id="urlInput" placeholder="https://shemalgandhi.github.io/gshemal" value="https://shemalgandhi.github.io/gshemal">
     <button class="gen-btn" onclick="generateQR()">Generate</button>
   </div>
-
   <div id="qr-container">
     <div id="qr-box"></div>
     <div class="qr-caption">Scan to visit: <strong id="qr-url-label"></strong></div>
-    <button class="download-btn" onclick="downloadQR()">⬇ Download QR PNG</button>
+    <button class="download-btn" onclick="downloadQR()">⬇ Download PNG</button>
   </div>
-
   <div class="hint">
-    <strong style="color:var(--text)">Free hosting options:</strong><br>
-    1. <a href="https://pages.github.com" target="_blank">GitHub Pages</a> — upload <code>index.html</code> → free <code>username.github.io</code><br>
-    2. <a href="https://netlify.com" target="_blank">Netlify Drop</a> — drag &amp; drop folder → instant URL in 30 seconds<br>
-    3. <a href="https://tiiny.host" target="_blank">tiiny.host</a> — upload ZIP → free URL instantly
+    <strong>Your live site:</strong><br>
+    <a href="https://shemalgandhi.github.io/gshemal" target="_blank">shemalgandhi.github.io/gshemal</a><br><br>
+    <strong>Upload files to GitHub Pages:</strong><br>
+    Go to github.com/shemalgandhi/gshemal → Add file → Upload files → Commit
   </div>
 </div>
-
 <script>
-let qrInstance = null;
-
-function generateQR() {
-  const url = document.getElementById('urlInput').value.trim();
-  if (!url) { alert('Please enter a URL first.'); return; }
-
-  const box = document.getElementById('qr-box');
-  box.innerHTML = '';
-
-  qrInstance = new QRCode(box, {
-    text: url,
-    width: 220,
-    height: 220,
-    colorDark: '#0d0d14',
-    colorLight: '#ffffff',
-    correctLevel: QRCode.CorrectLevel.H
-  });
-
-  document.getElementById('qr-url-label').textContent = url;
-  document.getElementById('qr-container').style.display = 'flex';
+let qrInstance=null;
+function generateQR(){
+  const url=document.getElementById('urlInput').value.trim();
+  if(!url){alert('Please enter a URL.');return;}
+  const box=document.getElementById('qr-box');
+  box.innerHTML='';
+  qrInstance=new QRCode(box,{text:url,width:220,height:220,colorDark:'#1e3a5f',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H});
+  document.getElementById('qr-url-label').textContent=url;
+  document.getElementById('qr-container').style.display='flex';
 }
-
-function downloadQR() {
-  setTimeout(() => {
-    const canvas = document.querySelector('#qr-box canvas');
-    if (!canvas) { alert('Please generate the QR code first.'); return; }
-    const link = document.createElement('a');
-    link.download = 'shemal-portfolio-qr.png';
-    link.href = canvas.toDataURL('image/png');
+function downloadQR(){
+  setTimeout(()=>{
+    const canvas=document.querySelector('#qr-box canvas');
+    if(!canvas){alert('Generate the QR first.');return;}
+    const link=document.createElement('a');
+    link.download='shemal-gandhi-portfolio-qr.png';
+    link.href=canvas.toDataURL('image/png');
     link.click();
-  }, 100);
+  },100);
 }
-
-// Auto-generate on load with placeholder
-window.onload = () => generateQR();
+window.onload=()=>generateQR();
 </script>
 </body>
 </html>

@@ -4,394 +4,94 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shemal Gandhi — Senior TAM | Database Architect | Cloud Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,700;1,300;1,500&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,700;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #f8fbff;
-  --surface: #ffffff;
-  --card: #dce8f5;
-  --border: #b8d0e8;
-  --gold: #1e3a5f;
-  --gold-dim: #3a6090;
-  --text: #1e3a5f;
-  --muted: #5a7a9a;
-  --accent2: #4a7fa5;
-  --white: #1e3a5f;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  background: #1e3a5f;
-  color: var(--text);
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  overflow-x: hidden;
-}
+:root { --navy:#1e3a5f; --navy-mid:#2d5a8e; --navy-light:#4a7aaa; --rule:#d0dcea; --soft:#f4f7fb; --muted:#5a7a9a; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:#fff;color:var(--navy);font-family:'DM Sans',sans-serif;font-weight:300;}
 
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 1.2rem 3rem;
-  background: rgba(30,58,95,0.95);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-}
-.nav-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: #64b5f6;
-  letter-spacing: 0.04em;
-}
-.nav-links { display: flex; gap: 2rem; }
-.nav-links a {
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--gold); }
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:#fff;border-bottom:2px solid var(--navy);position:fixed;top:0;left:0;right:0;z-index:100;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--navy);text-decoration:none;}
+.nav-links{display:flex;gap:2rem;}
+.nav-links a{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--navy);}
 
-/* ── HERO ── */
-#hero {
-  min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
-  position: relative;
-  overflow: hidden;
-  padding: 6rem 2rem 4rem;
-  background: #1e3a5f;
-}
-.hero-grid {
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(100,181,246,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(100,181,246,0.06) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-.hero-glow {
-  position: absolute;
-  width: 600px; height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(30,58,95,0.08) 0%, transparent 70%);
-  top: 50%; left: 50%; transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-.hero-content { position: relative; text-align: center; max-width: 800px; }
-.hero-tag {
-  color: #64b5f6 !important;
-  display: inline-block;
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold);
-  border: 1px solid var(--gold-dim);
-  padding: 0.35rem 1rem;
-  margin-bottom: 2rem;
-  animation: fadeUp 0.8s ease both;
-}
-.hero-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(4rem, 10vw, 7.5rem);
-  font-weight: 700;
-  line-height: 0.9;
-  color: #f0f8ff;
-  letter-spacing: -2px;
-  animation: fadeUp 0.8s 0.15s ease both;
-}
-.hero-name span { color: var(--gold); }
-.hero-roles {
-  color: #90b8d8 !important;
-  margin-top: 1.8rem;
-  font-size: 0.88rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
-  display: flex; align-items: center; justify-content: center; gap: 1.2rem;
-  flex-wrap: wrap;
-  animation: fadeUp 0.8s 0.3s ease both;
-}
-.hero-roles span { color: #3a6090; font-size: 0.6rem; }
-.hero-desc {
-  margin-top: 2rem;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #90b8d8;
-  max-width: 540px;
-  margin-left: auto; margin-right: auto;
-  animation: fadeUp 0.8s 0.45s ease both;
-}
-.hero-cta {
-  margin-top: 3rem;
-  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-  animation: fadeUp 0.8s 0.6s ease both;
-}
-.btn-primary {
-  padding: 0.75rem 2rem;
-  background: var(--gold);
-  color: var(--bg);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: 500;
-  transition: opacity 0.2s, transform 0.2s;
-}
-.btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
-.btn-secondary {
-  padding: 0.75rem 2rem;
-  background: transparent;
-  color: var(--text);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: 1px solid var(--border);
-  transition: border-color 0.2s, color 0.2s;
-}
-.btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--navy);padding:6rem 2rem 4rem;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:60px 60px;}
+.hero-content{position:relative;text-align:center;max-width:800px;}
+.hero-tag{display:inline-block;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#90b8d8;border:1px solid rgba(144,184,216,0.4);padding:0.3rem 1rem;margin-bottom:2rem;}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,9vw,7rem);font-weight:700;color:#fff;line-height:0.95;letter-spacing:-2px;}
+.hero-roles{margin-top:1.5rem;font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;color:#90b8d8;display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;}
+.hero-roles span{color:rgba(144,184,216,0.5);font-size:0.55rem;}
+.hero-desc{margin-top:1.8rem;font-size:1rem;line-height:1.8;color:#90b8d8;max-width:540px;margin-left:auto;margin-right:auto;}
+.hero-cta{margin-top:2.5rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-primary{padding:0.7rem 2rem;background:#fff;color:var(--navy);font-family:'DM Sans',sans-serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:background 0.2s;}
+.btn-primary:hover{background:#e8f0fa;}
+.btn-secondary{padding:0.7rem 2rem;background:transparent;color:#fff;font-family:'DM Sans',sans-serif;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,0.4);transition:border-color 0.2s;}
+.btn-secondary:hover{border-color:#fff;}
 
-/* ── SECTION BASE ── */
-section { padding: 6rem 2rem; }
-.container { max-width: 960px; margin: 0 auto; }
-.section-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 0.8rem;
-}
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  font-weight: 500;
-  color: var(--white);
-  line-height: 1.15;
-  margin-bottom: 3rem;
-}
-.divider {
-  width: 40px; height: 2px;
-  background: var(--gold);
-  margin: 1.2rem 0 2.5rem;
-}
+/* SECTIONS */
+section{padding:5rem 2rem;}
+.container{max-width:960px;margin:0 auto;}
+.section-label{font-size:0.65rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--navy-light);margin-bottom:0.6rem;font-weight:500;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3rem);font-weight:600;color:var(--navy);line-height:1.15;margin-bottom:2.5rem;}
+.divider{width:40px;height:3px;background:var(--navy);margin:1rem 0 2rem;}
 
-/* ── ABOUT ── */
-#about { background: #ffffff; }
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
-}
-.about-bio { font-size: 0.97rem; line-height: 1.9; color: #5a7a9a; }
-.about-bio p { margin-bottom: 1.2rem; }
-.about-bio strong { color: var(--text); font-weight: 500; }
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.6rem;
-}
-.skill-pill {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 0.5rem 0.9rem;
-  font-family: 'DM Mono', monospace;
-  font-size: 0.72rem;
-  color: var(--gold);
-  letter-spacing: 0.05em;
-  transition: border-color 0.2s;
-}
-.skill-pill:hover { border-color: var(--gold); }
-.skills-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 1rem;
-  margin-top: 2rem;
-}
-.skills-label:first-child { margin-top: 0; }
+/* ABOUT */
+#about{background:#fff;border-top:1px solid var(--rule);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.about-bio p{font-size:0.9rem;line-height:1.9;color:var(--muted);margin-bottom:1.1rem;}
+.about-bio p strong{color:var(--navy);font-weight:500;}
+.skills-label{font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--navy);margin-bottom:0.6rem;margin-top:1.6rem;font-weight:500;}
+.skills-label:first-child{margin-top:0;}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;}
+.skill-pill{background:var(--soft);border:1px solid var(--rule);padding:0.4rem 0.8rem;font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--navy);}
 
-/* ── COVER LETTER ── */
-#cover-letter { background: #1e3a5f; }
-.letter-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 4rem;
-  border-left: 4px solid #1e3a5f;
-  max-width: 780px;
-}
-.letter-header {
-  display: flex; justify-content: space-between; align-items: flex-start;
-  margin-bottom: 2.5rem; padding-bottom: 2rem;
-  border-bottom: 1px solid var(--border);
-}
-.letter-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
-  font-weight: 500;
-  color: var(--white);
-}
-.letter-subtitle {
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-top: 0.3rem;
-}
-.letter-contact { font-size: 0.78rem; color: var(--muted); line-height: 1.9; text-align: right; }
-.letter-contact a { color: var(--muted); text-decoration: none; }
-.letter-date { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.8rem; letter-spacing: 0.04em; }
-.letter-salutation {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: 1.5rem;
-}
-.letter-body p { font-size: 0.92rem; line-height: 1.9; color: #5a7a9a; margin-bottom: 1.2rem; }
-.letter-body p strong { color: var(--text); font-weight: 500; }
-.letter-quote {
-  border-left: 2px solid var(--gold);
-  padding-left: 1.2rem;
-  margin: 1.8rem 0;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.05rem;
-  font-style: italic;
-  color: var(--text);
-  line-height: 1.7;
-}
-.letter-closing { margin-top: 2rem; }
-.closing-word { font-size: 0.92rem; color: var(--muted); margin-bottom: 0.3rem; }
-.closing-sig {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.7rem;
-  font-weight: 500;
-  color: var(--white);
-  margin-top: 1.2rem;
-}
-.closing-role {
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-top: 0.3rem;
-}
+/* COVER LETTER + RESUME CARDS */
+#cover-letter{background:var(--soft);border-top:1px solid var(--rule);}
+#resume{background:#fff;border-top:1px solid var(--rule);}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:900px;}
+.card-link{text-decoration:none;display:flex;}
+.card{background:#fff;border:1px solid var(--rule);border-top:3px solid var(--navy);padding:1.8rem;display:flex;flex-direction:column;width:100%;transition:box-shadow 0.2s,border-color 0.2s;}
+.card:hover{box-shadow:0 4px 20px rgba(30,58,95,0.1);border-top-color:var(--navy-mid);}
+#cover-letter .card{background:var(--soft);}
+#resume .card{background:#fff;}
+.card-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--navy-light);margin-bottom:0.7rem;font-weight:500;}
+.card-title{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500;color:var(--navy);margin-bottom:0.8rem;line-height:1.3;}
+.card-desc{font-size:0.8rem;color:var(--muted);line-height:1.7;flex:1;}
+.card-cta{margin-top:1.4rem;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);font-weight:500;}
 
-/* ── RESUME ── */
-#resume { background: #ffffff; }
-.resume-section { margin-bottom: 3rem; }
-.resume-section-title {
-  font-size: 0.68rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold);
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.7rem;
-  margin-bottom: 1.5rem;
-}
-.resume-item { margin-bottom: 2rem; display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start; }
-.resume-role {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: var(--white);
-}
-.resume-company { font-size: 0.82rem; color: var(--gold); margin-top: 0.15rem; }
-.resume-date {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.72rem;
-  color: var(--muted);
-  white-space: nowrap;
-  text-align: right;
-  margin-top: 0.2rem;
-}
-.resume-bullets { margin-top: 0.8rem; grid-column: 1 / -1; }
-.resume-bullets li {
-  font-size: 0.87rem;
-  color: #5a7a9a;
-  line-height: 1.75;
-  margin-bottom: 0.4rem;
-  padding-left: 1.2rem;
-  position: relative;
-  list-style: none;
-}
-.resume-bullets li::before {
-  content: '—';
-  position: absolute; left: 0;
-  color: #3a6090;
-  font-size: 0.75rem;
-}
-.cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
-.cert-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 1.2rem;
-  transition: border-color 0.2s;
-}
-.cert-card:hover { border-color: var(--gold); }
-.cert-name { font-size: 0.85rem; color: var(--text); font-weight: 400; }
-.cert-issuer { font-size: 0.72rem; color: var(--muted); margin-top: 0.3rem; }
-.download-bar {
-  display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap;
-}
+/* CONTACT */
+#contact{background:var(--navy);border-top:1px solid var(--rule);}
+#contact .section-label{color:rgba(144,184,216,0.8);}
+#contact .section-title{color:#fff;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:600px;}
+.contact-item{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);padding:1.3rem;}
+.contact-label{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:#90b8d8;margin-bottom:0.4rem;}
+.contact-value{font-size:0.88rem;color:#fff;}
+.contact-value a{color:#fff;text-decoration:none;}
+.contact-value a:hover{color:#90b8d8;}
 
-/* ── CONTACT ── */
-#contact { background: #1e3a5f; }
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  max-width: 640px;
-}
-.contact-item {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 1.5rem;
-  transition: border-color 0.2s;
-}
-.contact-item:hover { border-color: var(--gold); }
-.contact-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-.contact-value { font-size: 0.9rem; color: var(--text); }
-.contact-value a { color: var(--text); text-decoration: none; }
-.contact-value a:hover { color: var(--gold); }
+/* FOOTER */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.1);padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;font-size:0.72rem;color:rgba(144,184,216,0.7);}
 
-/* ── FOOTER ── */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 2rem 3rem;
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 0.75rem;
-  color: var(--muted);
-}
-
-/* ── ANIMATIONS ── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-  nav { padding: 1rem 1.5rem; }
-  .nav-links { gap: 1.2rem; }
-  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .letter-card { padding: 2rem 1.5rem; }
-  .letter-header { flex-direction: column; gap: 1rem; }
-  .letter-contact { text-align: left; }
-  .contact-grid { grid-template-columns: 1fr; }
-  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem;}
+  .nav-links{gap:1.2rem;}
+  .about-grid{grid-template-columns:1fr;gap:2rem;}
+  .cards-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  footer{flex-direction:column;gap:0.4rem;text-align:center;}
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">Shemal Gandhi</div>
+  <a class="nav-logo" href="#">Shemal Gandhi</a>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#cover-letter">Cover Letter</a>
@@ -400,24 +100,18 @@ footer {
   </div>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
   <div class="hero-content">
     <div class="hero-tag">Open to new opportunities &nbsp;·&nbsp; Mumbai, India</div>
     <div class="hero-name">Shemal Gandhi</div>
     <div class="hero-roles">
-      Senior TAM
-      <span>◆</span>
-      Solutions Architect
-      <span>◆</span>
-      Database Engineer
+      Senior TAM <span>◆</span> Solutions Architect <span>◆</span> Database Engineer
     </div>
     <p class="hero-desc">12+ years turning complex database challenges into reliable, scalable infrastructure — and helping enterprises extract measurable value from their data platforms.</p>
     <div class="hero-cta">
       <a href="#cover-letter" class="btn-primary">Read Cover Letter</a>
-      <a href="resume.html" class="btn-secondary">View Résumé</a>
+      <a href="#resume" class="btn-secondary">View Résumé</a>
     </div>
   </div>
 </section>
@@ -429,50 +123,37 @@ footer {
     <h2 class="section-title">Technical depth.<br>Customer empathy.</h2>
     <div class="about-grid">
       <div class="about-bio">
-        <p>After <strong>12 years as a Database Administrator &amp; Cloud Engineer</strong>, I have moved into a Customer Success role at <strong>EnterpriseDB</strong> as a Senior Technical Account Manager — leveraging deep expertise in PostgreSQL, Oracle, and cloud infrastructure to deliver impactful solutions for complex customer challenges.</p>
+        <p>After <strong>12 years as a Database Administrator &amp; Cloud Engineer</strong>, I moved into a Customer Success role at <strong>EnterpriseDB</strong> as a Senior Technical Account Manager — leveraging deep expertise in PostgreSQL, Oracle, and cloud infrastructure to deliver impactful solutions for complex customer challenges.</p>
         <p>I provide <strong>proactive technical guidance</strong> on architecture, performance optimisation, security, and best practices — leading technical reviews, health checks, and assessments to ensure optimal database performance and reliability. I support customers through migrations, upgrades, and critical implementations.</p>
-        <p>I specialise in <strong>RDBMS technologies</strong> including Oracle, PostgreSQL, MySQL, and MSSQL Server, managing their lifecycle across on-premises and public cloud environments. My expertise spans backup &amp; recovery, high availability, disaster recovery, performance tuning, database security, and DBaaS solutions including <strong>AWS RDS and Aurora</strong>.</p>
-        <p>As a <strong>Cloud Engineer</strong>, I have extensive experience across public cloud services — compute, storage, networking, security, IAM, and compliance. I have also worked extensively with NoSQL databases, data warehousing (IBM Netezza, Snowflake), and event streaming with Apache Kafka.</p>
+        <p>I specialise in <strong>RDBMS technologies</strong> including Oracle, PostgreSQL, MySQL, and MSSQL Server across on-premises and public cloud environments. My expertise spans backup &amp; recovery, high availability, disaster recovery, performance tuning, database security, and DBaaS solutions including <strong>AWS RDS and Aurora</strong>.</p>
+        <p>As a <strong>Cloud Engineer</strong>, I have extensive experience across public cloud services — compute, storage, networking, security, IAM, and compliance — with additional depth in NoSQL, data warehousing (IBM Netezza, Snowflake), and event streaming with Apache Kafka.</p>
       </div>
       <div>
         <div class="skills-label">SQL Databases</div>
         <div class="skills-grid">
-          <div class="skill-pill">Oracle 11g–19c</div>
-          <div class="skill-pill">PostgreSQL 9–14</div>
-          <div class="skill-pill">MS SQL Server</div>
-          <div class="skill-pill">MySQL 5.7–8.0</div>
+          <div class="skill-pill">Oracle 11g–19c</div><div class="skill-pill">PostgreSQL 9–17</div>
+          <div class="skill-pill">MySQL 5.7–8.0</div><div class="skill-pill">MSSQL 2008–2018</div>
         </div>
         <div class="skills-label">Oracle Technologies</div>
         <div class="skills-grid">
-          <div class="skill-pill">RMAN</div>
-          <div class="skill-pill">Data Guard</div>
-          <div class="skill-pill">GoldenGate</div>
-          <div class="skill-pill">Multi-tenant</div>
+          <div class="skill-pill">RMAN</div><div class="skill-pill">Data Guard</div>
+          <div class="skill-pill">GoldenGate</div><div class="skill-pill">Multi-tenant</div>
         </div>
         <div class="skills-label">NoSQL & Warehousing</div>
         <div class="skills-grid">
-          <div class="skill-pill">MongoDB Atlas</div>
-          <div class="skill-pill">DynamoDB</div>
-          <div class="skill-pill">Redis</div>
-          <div class="skill-pill">Elasticsearch</div>
-          <div class="skill-pill">Snowflake</div>
-          <div class="skill-pill">IBM Netezza</div>
+          <div class="skill-pill">MongoDB Atlas</div><div class="skill-pill">DynamoDB</div>
+          <div class="skill-pill">Redis</div><div class="skill-pill">Elasticsearch</div>
+          <div class="skill-pill">Snowflake</div><div class="skill-pill">IBM Netezza</div>
         </div>
         <div class="skills-label">Cloud & DevOps</div>
         <div class="skills-grid">
-          <div class="skill-pill">AWS / OCI</div>
-          <div class="skill-pill">Terraform / Ansible</div>
-          <div class="skill-pill">Jenkins / Git</div>
-          <div class="skill-pill">Grafana</div>
-          <div class="skill-pill">Apache Kafka</div>
-          <div class="skill-pill">Docker / K8s</div>
+          <div class="skill-pill">AWS / OCI</div><div class="skill-pill">Terraform / Ansible</div>
+          <div class="skill-pill">Jenkins / Git</div><div class="skill-pill">Grafana / Kafka</div>
         </div>
         <div class="skills-label">Domains</div>
         <div class="skills-grid">
-          <div class="skill-pill">ERP / Corporate IT</div>
-          <div class="skill-pill">BFSI</div>
-          <div class="skill-pill">Oil & Gas / Retail</div>
-          <div class="skill-pill">Product / SaaS</div>
+          <div class="skill-pill">ERP / Corporate IT</div><div class="skill-pill">BFSI</div>
+          <div class="skill-pill">Oil &amp; Gas / Retail</div><div class="skill-pill">Product / SaaS</div>
         </div>
       </div>
     </div>
@@ -484,36 +165,32 @@ footer {
   <div class="container">
     <div class="section-label">Cover Letter</div>
     <h2 class="section-title">Targeted for the<br>right opportunity.</h2>
-    <p style="color:var(--muted);font-size:0.95rem;margin-bottom:2.5rem;max-width:540px;">Three versions — each written for a specific role. Select the one that fits the position you are hiring for.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:900px;">
-
-      <a href="cover-letter-dba.html" target="_blank" style="text-decoration:none;">
-        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
-          <div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Database Engineer / DBRE</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:0.8rem;">Engine Room<br>Engineer</div>
-          <div style="font-size:0.8rem;color:var(--muted);line-height:1.7;">Focused on hands-on DB engineering depth — Oracle, PostgreSQL, HA/DR architecture, performance tuning, and platform reliability.</div>
-          <div style="margin-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">Read Letter →</div>
+    <p style="font-size:0.9rem;color:var(--muted);margin-bottom:2rem;max-width:520px;">Three versions — each written for a specific role. Select the one that fits the position you are hiring for.</p>
+    <div class="cards-grid">
+      <a href="cover-letter-dba.html" target="_blank" class="card-link">
+        <div class="card">
+          <div class="card-label">Database Engineer / DBRE</div>
+          <div class="card-title">Engine Room Engineer</div>
+          <div class="card-desc">Focused on hands-on DB engineering depth — Oracle, PostgreSQL, HA/DR architecture, performance tuning, and platform reliability.</div>
+          <div class="card-cta">Read Letter →</div>
         </div>
       </a>
-
-      <a href="cover-letter-tam.html" target="_blank" style="text-decoration:none;">
-        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
-          <div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Technical Account Manager</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:0.8rem;">Engineer Who<br>Faces the Customer</div>
-          <div style="font-size:0.8rem;color:var(--muted);line-height:1.7;">Focused on technically-led customer advisory — architecture reviews, EBRs, and customer success built on engineering credibility.</div>
-          <div style="margin-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">Read Letter →</div>
+      <a href="cover-letter-tam.html" target="_blank" class="card-link">
+        <div class="card">
+          <div class="card-label">Technical Account Manager</div>
+          <div class="card-title">Engineer Who Faces the Customer</div>
+          <div class="card-desc">Focused on technically-led customer advisory — architecture reviews, EBRs, and customer success built on engineering credibility.</div>
+          <div class="card-cta">Read Letter →</div>
         </div>
       </a>
-
-      <a href="cover-letter-sa.html" target="_blank" style="text-decoration:none;">
-        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
-          <div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Solutions Architect</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:0.8rem;">Architect Who's<br>Been On-Call</div>
-          <div style="font-size:0.8rem;color:var(--muted);line-height:1.7;">Focused on platform and data architecture — cloud-native design, multi-domain breadth, and solutions built from production experience.</div>
-          <div style="margin-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">Read Letter →</div>
+      <a href="cover-letter-sa.html" target="_blank" class="card-link">
+        <div class="card">
+          <div class="card-label">Solutions Architect</div>
+          <div class="card-title">Architect Who's Been On-Call</div>
+          <div class="card-desc">Focused on platform and data architecture — cloud-native design, multi-domain breadth, and solutions built from production experience.</div>
+          <div class="card-cta">Read Letter →</div>
         </div>
       </a>
-
     </div>
   </div>
 </section>
@@ -523,36 +200,32 @@ footer {
   <div class="container">
     <div class="section-label">Résumé</div>
     <h2 class="section-title">Targeted for the<br>right role.</h2>
-    <p style="color:var(--muted);font-size:0.95rem;margin-bottom:2.5rem;max-width:540px;">Three versions — each positioned for a specific career track. Select the one that matches the role you are hiring for.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:900px;">
-
-      <a href="resume-dbre.html" target="_blank" style="text-decoration:none;">
-        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
-          <div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Database Reliability Engineer</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:0.8rem;">Principal DBRE<br>/ Database Engineer</div>
-          <div style="font-size:0.8rem;color:var(--muted);line-height:1.7;">PostgreSQL · Oracle RAC/ASM · HA/DR · AWS RDS · Performance Engineering · 99.99% uptime delivery</div>
-          <div style="margin-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">View Résumé →</div>
+    <p style="font-size:0.9rem;color:var(--muted);margin-bottom:2rem;max-width:520px;">Three versions — each positioned for a specific career track. Select the one that matches the role you are hiring for.</p>
+    <div class="cards-grid">
+      <a href="resume-dbre.html" target="_blank" class="card-link">
+        <div class="card">
+          <div class="card-label">Database Reliability Engineer</div>
+          <div class="card-title">Principal DBRE / Database Engineer</div>
+          <div class="card-desc">PostgreSQL · Oracle RAC/ASM · HA/DR · AWS RDS · Performance Engineering · 99.99% uptime delivery</div>
+          <div class="card-cta">View Résumé →</div>
         </div>
       </a>
-
-      <a href="resume-tam.html" target="_blank" style="text-decoration:none;">
-        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
-          <div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Technical Account Manager</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:0.8rem;">Senior TAM<br>/ Customer Success</div>
-          <div style="font-size:0.8rem;color:var(--muted);line-height:1.7;">EBRs · Architecture Advisory · Stakeholder Management · Enterprise Accounts · EMEA CS Model</div>
-          <div style="margin-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">View Résumé →</div>
+      <a href="resume-tam.html" target="_blank" class="card-link">
+        <div class="card">
+          <div class="card-label">Technical Account Manager</div>
+          <div class="card-title">Senior TAM / Customer Success</div>
+          <div class="card-desc">EBRs · Architecture Advisory · Stakeholder Management · Enterprise Accounts · EMEA CS Model</div>
+          <div class="card-cta">View Résumé →</div>
         </div>
       </a>
-
-      <a href="resume-sa.html" target="_blank" style="text-decoration:none;">
-        <div style="background:var(--card);border:1px solid var(--border);padding:2rem;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
-          <div style="font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Solutions / Cloud Architect</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--white);margin-bottom:0.8rem;">Cloud Database<br>Architect</div>
-          <div style="font-size:0.8rem;color:var(--muted);line-height:1.7;">HA/DR Design · Cloud Migration · Terraform · Multi-engine Architecture · Modernisation Roadmaps</div>
-          <div style="margin-top:1.5rem;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);">View Résumé →</div>
+      <a href="resume-sa.html" target="_blank" class="card-link">
+        <div class="card">
+          <div class="card-label">Solutions / Cloud Architect</div>
+          <div class="card-title">Cloud Database Architect</div>
+          <div class="card-desc">HA/DR Design · Cloud Migration · Terraform · Multi-engine Architecture · Modernisation Roadmaps</div>
+          <div class="card-cta">View Résumé →</div>
         </div>
       </a>
-
     </div>
   </div>
 </section>
@@ -568,10 +241,6 @@ footer {
         <div class="contact-value"><a href="mailto:shemalrgandhi@gmail.com">shemalrgandhi@gmail.com</a></div>
       </div>
       <div class="contact-item">
-        <div class="contact-label">Location</div>
-        <div class="contact-value">Mumbai, Maharashtra, India</div>
-      </div>
-      <div class="contact-item">
         <div class="contact-label">Phone</div>
         <div class="contact-value"><a href="tel:+919096790297">+91 90967 90297</a></div>
       </div>
@@ -580,8 +249,8 @@ footer {
         <div class="contact-value"><a href="https://www.linkedin.com/in/shemal-gandhi-9a73ab60/" target="_blank">linkedin.com/in/shemal-gandhi</a></div>
       </div>
       <div class="contact-item">
-        <div class="contact-label">Current Role</div>
-        <div class="contact-value">Sr. TAM @ EnterpriseDB</div>
+        <div class="contact-label">Location</div>
+        <div class="contact-value">Mumbai, Maharashtra, India</div>
       </div>
     </div>
   </div>
